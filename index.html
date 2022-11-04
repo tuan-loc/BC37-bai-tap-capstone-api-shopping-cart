@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoppingCart</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <style type="text/css">
+        @font-face {
+            font-family: Roboto;
+            src: url("chrome-extension://mcgbeeipkmelnpldkobichboakdfaeon/css/Roboto-Regular.ttf");
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div id="app">
+        <select name="" id="filter-product">
+            <option value="">Loại sản phẩm</option>
+            <option value="samsung">Samsung</option>
+            <option value="iphone">iPhone</option>
+        </select>
+        <div>
+            <div class="banner">
+                <div class="main-cart" id="main-cart"></div>
+                <div class="nav">
+                    <button onclick="sideNav(1)" id="shopping-cart"><i class="fas fa-shopping-cart"
+                            style="font-size: 2rem;"></i></button>
+                    <span class="total-qty"></span>
+                </div>
+                <div onclick="sideNav(0)" class="cover" style="display: none;"></div>
+                <div class="cover purchase-cover"></div>
+                <div class="cart">
+                    <div class="side-nav" style="right: -100%;">
+                        <button onclick="sideNav(0)"><i class="fas fa-times"></i></button>
+                        <h2>Cart</h2>
+                        <div class="cart-items"></div>
+                        <div class="final">
+                            <strong>Total: $ <span class="total"></span></strong>
+                            <div class="action">
+                                <button class="btn buy">Purchase <i class="fas fa-credit-card"
+                                        style="color:#6665dd;"></i></button>
+                                <button class="btn clear">Clear Cart <i class="fas fa-trash"
+                                        style="color:#bb342f;"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-now">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js"
+        integrity="sha512-bHeT+z+n8rh9CKrSrbyfbINxu7gsBmSHlDCb3gUF1BjmjDzKhoKspyB71k0CIRBSjE5IVQiMMVBgCWjF60qsvA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="./models/products.js"></script>
+    <script src="./models/cartItem.js"></script>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
